@@ -1,0 +1,20 @@
+$main-color: var(--main-color);
+$btn-text-color: var(--btn-text-color);
+
+.consent-btn {
+    display: block;
+    background-color: $main-color;
+    padding: 5px 25px;
+    border-radius: 3px;
+    border: none;
+    margin: auto;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $btn-text-color;
+    line-height: 33px;
+    letter-spacing: 1.25px;
+    &:hover {
+        cursor: pointer;
+    }
+}

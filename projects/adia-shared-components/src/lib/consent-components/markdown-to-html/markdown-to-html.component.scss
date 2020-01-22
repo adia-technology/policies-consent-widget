@@ -1,0 +1,88 @@
+$font-color-opt-default: var(--font-color-opt-default);
+$color-1: var(--color-1);
+$color-2: var(--color-2);
+$main-color: var(--main-color);
+
+// Variables
+
+$h1-font-size: 20px;
+$h2-font-size: 14px;
+$main-header-font-family: Ubuntu;
+$default-font-family: Roboto;
+
+// General styling
+
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+
+::ng-deep * {
+    font-family: $default-font-family;
+}
+
+::ng-deep h1 {
+    color: $font-color-opt-default;
+    font-family: $main-header-font-family;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+::ng-deep h2 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: 1rem 0;
+    letter-spacing: 0.25px;
+}
+
+::ng-deep ol {
+    padding: 0;
+    counter-reset: my-awesome-counter;
+}
+
+::ng-deep ol li {
+    font-size: $h2-font-size;
+    counter-increment: my-awesome-counter;
+}
+
+::ng-deep ol li::before {
+    content: counter(my-awesome-counter) ". ";
+}
+
+::ng-deep ul {
+    padding: 0;
+    counter-reset: my-awesome-counter;
+}
+
+::ng-deep ul li {
+    font-size: $h2-font-size;
+    counter-increment: my-awesome-counter;
+}
+
+::ng-deep ul li::before {
+    content: counter(my-awesome-counter) ". ";
+}
+
+::ng-deep hr {
+    height: 1px;
+    background-color: $color-2 !important;
+    border: none;
+}
+
+::ng-deep p {
+    font-size: $h2-font-size;
+}
+
+::ng-deep ul + p {
+    margin-bottom: 2rem;
+}
+
+.md-container {
+    text-align: start;
+}
+

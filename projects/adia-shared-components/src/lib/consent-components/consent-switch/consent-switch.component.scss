@@ -1,0 +1,60 @@
+@import '../../../../../../node_modules/ngx-ui-switch/ui-switch.component.scss';
+
+$font-color-opt-default: var(--font-color-opt-default);
+$color-1: var(--color-1);
+$color-2: var(--color-2);
+$main-color: var(--main-color);
+$switch-bg-color: var(--switch-bg-color);
+
+// Toggle overrides
+
+::ng-deep .switch.switch-small.checked {
+    background: $switch-bg-color;
+    small {
+        background-color: $main-color;
+        box-shadow: none;
+        width: 20px;
+        height: 20px;
+        top: -1px;
+        right:-1px;
+    }
+}
+
+::ng-deep .switch {
+            small {
+            background-color: $color-2;
+            box-shadow: -0.5px 0 2px 1px $color-2;
+            top:-1px;
+        }
+}
+
+::ng-deep .switch.switch-small {
+    min-width: 40px;
+    height: 18px;
+}
+
+.opt-toggle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    font-weight: 700;
+    span {
+        margin: 0 1rem;
+    }
+}
+
+.opt-in-default {
+    color: $color-1
+}
+
+.opt-out-default {
+    color: $font-color-opt-default
+}
+
+.opt-in-toggled {
+    color: $main-color;
+}
+
+.opt-out-toggled {
+    color: $color-1
+}
