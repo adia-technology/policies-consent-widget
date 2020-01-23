@@ -1,24 +1,76 @@
 # PoliciesConsentWidget
 
+Set of reusable components to compose customizable policy consent Angular modal.
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
-## Code scaffolding
+## Getting started
 
-Run `ng generate component component-name --project policies-consent-widget` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project policies-consent-widget`.
-> Note: Don't forget to add `--project policies-consent-widget` or else it will be added to the default project in your `angular.json` file. 
+### Installing
 
-## Build
+Npm installation:
+```
+npm install policies-consent-widget --save
+```
 
-Run `ng build policies-consent-widget` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Usage & example
 
-## Publishing
+In order to customize the looks of a modal prepare property of type ```Theme``` and specify colors.
+```
+  theme: Theme = 
+  {
+    'primary-color':'#53d356',
+    'secondary-color':'#333333',
+    'tertiary-color':'#E7E7E7',
+    'quaternary-color':'#E2E6EA',
+    'switch-bg-color':'#FFFFFF',
+    'btn-text-color':'#FFFFFF'
+  }
+```
 
-After building your library with `ng build policies-consent-widget`, go to the dist folder `cd dist/policies-consent-widget` and run `npm publish`.
+Add third party scss imports to your global styling scss. 
+```
+@import '~ngx-smart-modal/ngx-smart-modal';
+@import '~ngx-ui-switch/ui-switch.component.scss';
+```
 
-## Running unit tests
+Basic example
+```
+<app-consent-modal [theme]="theme" (onClose)="save()">
+  Put a content here e.g. html.
+  <app-consent-switch [theme]="theme" (switchToggled)="setSwitch($event)"></app-consent-switch>
+  <app-consent-button [theme]="theme" [innerText]="'Confirm'" (onClick)="confirmConsent()"></app-consent-button>
+</app-consent-modal>
+```
 
-Run `ng test policies-consent-widget` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Example with markdown rendering within modal. 
+This was accomplished by utilizing ```*ngIf=...; else ...``` and ```<ng-template #...>```, thus the reason to supply below flags and events.
+You have to provide markdown string to ```app-markdown-to-html``` component via ```[markdownContent]``` binding. Provide flag for showing and hidding navigation back arrow, which is hidden by default. Inform ```app-consent-modal``` via ```[confirmedConsent]``` that consent is confirmed and modal can be closed.
+Toggle modal view when navigating back from rendered markdown by listening ```(onNavigateBack)``` event.
 
-## Further help
+```<app-consent-modal [theme]="theme"
+[showBackArrow]="showMarkdown" 
+(onNavigateBack)="toggleMarkdown($event)"
+(onClose)="save()"
+[confirmedConsent]="confirmedConsent">
+  <div *ngIf="!showMarkdown; else markdown">
+    <h1>{{ primaryHeader }}</h1>
+    <h2>{{ secondaryHeader }}</h2>
+    <h3>{{ tertiaryHeader }}</h3>
+    <div>{{ subheaderPart1 }} 
+      <a (click)="renderMarkdown()"> {{ subheaderPart2 }}</a>
+    </div>
+  </div>
+  <app-consent-switch [theme]="theme" (switchToggled)="setSwitch($event)"></app-consent-switch>
+  <app-consent-button [theme]="theme" [innerText]="'Confirm'" (onClick)="confirmedConsent()"></app-consent-button>
+  <ng-template #markdown>
+    <app-markdown-to-html [theme]="theme" [markdownContent]="markdown"></app-markdown-to-html>
+  </ng-template>
+</app-consent-modal>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Built With
+
+* [ngx-smart-modal](https://biig-io.github.io/ngx-smart-modal/#/) - Angular library for managing modals inside any Angular project
+* [ngx-md](https://github.com/dimpu/ngx-md) - Angular directive for parsing markdown content in your web application
+* [ngx-ui-switch](https://github.com/webcat12345/ngx-ui-switch) - Switch component for Angular
+
