@@ -1,5 +1,5 @@
 {
-  "name": "adia-shared-components",
+  "name": "policies-consent-widget",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.14",

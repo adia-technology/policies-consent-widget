@@ -1,6 +1,6 @@
 @import '../../../../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss';
 
-$main-color:var(--main-color);
+$primary-color:var(--primary-color);
 
 // Modal overrides
 
@@ -25,7 +25,7 @@ $main-color:var(--main-color);
 }
 
 ::ng-deep div[class=nsm-body] + .ng-star-inserted {
-    color: $main-color;
+    color: $primary-color;
     width: 5px;
     height: 5px;
     cursor: pointer;
@@ -45,7 +45,7 @@ $main-color:var(--main-color);
 }
 
 i {
-    color: $main-color;
+    color: $primary-color;
     &:hover {
         cursor: pointer;
     }

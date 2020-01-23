@@ -1,7 +1,7 @@
-$font-color-opt-default: var(--font-color-opt-default);
-$color-1: var(--color-1);
-$color-2: var(--color-2);
-$main-color: var(--main-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
+$quaternary-color: var(--quaternary-color);
+$primary-color: var(--primary-color);
 
 // Variables
 
@@ -23,7 +23,7 @@ $default-font-family: Roboto;
 }
 
 ::ng-deep h1 {
-    color: $font-color-opt-default;
+    color: $secondary-color;
     font-family: $main-header-font-family;
     font-style: normal;
     font-size: 20px;
@@ -70,7 +70,7 @@ $default-font-family: Roboto;
 
 ::ng-deep hr {
     height: 1px;
-    background-color: $color-2 !important;
+    background-color: $quaternary-color !important;
     border: none;
 }
 

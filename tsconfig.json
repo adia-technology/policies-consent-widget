@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "adia-shared-components": [
-        "dist/adia-shared-components"
+      "policies-consent-widget": [
+        "dist/policies-consent-widget"
       ],
-      "adia-shared-components/*": [
-        "dist/adia-shared-components/*"
+      "policies-consent-widget/*": [
+        "dist/policies-consent-widget/*"
       ]
     }
   },

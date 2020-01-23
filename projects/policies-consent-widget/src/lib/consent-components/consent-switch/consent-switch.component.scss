@@ -1,9 +1,9 @@
 @import '../../../../../../node_modules/ngx-ui-switch/ui-switch.component.scss';
 
-$font-color-opt-default: var(--font-color-opt-default);
-$color-1: var(--color-1);
-$color-2: var(--color-2);
-$main-color: var(--main-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
+$quaternary-color: var(--quaternary-color);
+$primary-color: var(--primary-color);
 $switch-bg-color: var(--switch-bg-color);
 
 // Toggle overrides
@@ -11,7 +11,7 @@ $switch-bg-color: var(--switch-bg-color);
 ::ng-deep .switch.switch-small.checked {
     background: $switch-bg-color;
     small {
-        background-color: $main-color;
+        background-color: $primary-color;
         box-shadow: none;
         width: 20px;
         height: 20px;
@@ -22,8 +22,8 @@ $switch-bg-color: var(--switch-bg-color);
 
 ::ng-deep .switch {
             small {
-            background-color: $color-2;
-            box-shadow: -0.5px 0 2px 1px $color-2;
+            background-color: $quaternary-color;
+            box-shadow: -0.5px 0 2px 1px $quaternary-color;
             top:-1px;
         }
 }
@@ -44,17 +44,17 @@ $switch-bg-color: var(--switch-bg-color);
 }
 
 .opt-in-default {
-    color: $color-1
+    color: $tertiary-color
 }
 
 .opt-out-default {
-    color: $font-color-opt-default
+    color: $secondary-color
 }
 
 .opt-in-toggled {
-    color: $main-color;
+    color: $primary-color;
 }
 
 .opt-out-toggled {
-    color: $color-1
+    color: $tertiary-color
 }
