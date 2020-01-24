@@ -1,0 +1,52 @@
+@import '../../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss';
+
+$primary-color:var(--primary-color);
+
+// Modal overrides
+
+::ng-deep .nsm-dialog {
+    border-radius: 0;
+    margin-top: 10rem;
+    max-width: 45%;
+    margin: 2rem auto auto auto;
+}
+
+::ng-deep .nsm-content {
+    margin-top: 3rem;
+    padding: 0;
+}
+
+::ng-deep .nsm-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 30px;
+}
+
+::ng-deep div[class=nsm-body] + .ng-star-inserted {
+    color: $primary-color;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    top: 1rem;
+    right: 2rem;
+}
+
+::ng-deep svg {
+    display: none;
+    height: 12px;
+    width: 12px;
+}
+
+.navigation-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+i {
+    color: $primary-color;
+    &:hover {
+        cursor: pointer;
+    }
+}
