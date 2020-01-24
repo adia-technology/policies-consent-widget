@@ -9,7 +9,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 Npm installation:
 ```
-npm install policies-consent-widget --save
+npm install @adia-technology/policies-consent-widget --save
 ```
 
 ### Usage & example
