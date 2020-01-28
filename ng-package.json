@@ -5,7 +5,7 @@
     "entryFile": "src/public-api.ts"
   },
   "whitelistedNonPeerDependencies": [
-    "ngx-md",
+    "ngx-markdown",
     "ngx-ui-switch",
     "ngx-smart-modal"
   ]
