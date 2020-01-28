@@ -1,6 +1,6 @@
 {
-  "name": "policies-consent-widget",
-  "version": "1.0.2",
+  "name": "@adia-technology/policies-consent-widget",
+  "version": "1.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -48,10 +48,9 @@
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    
+    "zone.js": "~0.9.1"
   }
 }
