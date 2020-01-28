@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { UiSwitchModule } from 'ngx-ui-switch';
-import { NgxMdModule } from 'ngx-md';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { ConsentButtonComponent } from './consent-button/consent-button.component';
 import { ConsentSwitchComponent } from './consent-switch/consent-switch.component';
@@ -23,7 +23,7 @@ import { ThemeDirective } from './theme/theme.directive';
     CommonModule,
     NgxSmartModalModule.forRoot(),
     UiSwitchModule,
-    NgxMdModule.forRoot()
+    MarkdownModule.forRoot()
   ],
   exports: [
     ConsentButtonComponent,
