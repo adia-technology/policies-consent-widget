@@ -47,7 +47,8 @@ This was accomplished by utilizing ```*ngIf=...; else ...``` and ```<ng-template
 You have to provide markdown string to ```app-markdown-to-html``` component via ```[markdownContent]``` binding. Provide flag for showing and hidding navigation back arrow, which is hidden by default. Inform ```app-consent-modal``` via ```[confirmedConsent]``` that consent is confirmed and modal can be closed.
 Toggle modal view when navigating back from rendered markdown by listening ```(onNavigateBack)``` event.
 
-```<app-consent-modal [theme]="theme"
+```
+<app-consent-modal [theme]="theme"
 [showBackArrow]="showMarkdown" 
 (onNavigateBack)="toggleMarkdown($event)"
 (onClose)="save()"
