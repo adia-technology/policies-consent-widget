@@ -1,10 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-consent-modal',
   templateUrl: './consent-modal.component.html',
-  styleUrls: ['./consent-modal.component.scss']
+  styleUrls: ['./consent-modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ConsentModalComponent implements OnInit {
   constructor(
