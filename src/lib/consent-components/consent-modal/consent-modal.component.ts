@@ -14,7 +14,7 @@ export class ConsentModalComponent implements OnInit {
   showMarkdown = false;
 
   @Input() showBackArrow: boolean;
-  @Input() confirmedConsent: EventEmitter<any>;
+  @Input() confirmedConsent: EventEmitter<any> = new EventEmitter();
   @Output() onClose: EventEmitter<any> = new EventEmitter();
   @Output() onNavigateBack: EventEmitter<any> = new EventEmitter();
 

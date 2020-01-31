@@ -1,4 +1,4 @@
-import { Component, Renderer2, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Renderer2, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-consent-switch',
@@ -9,6 +9,9 @@ export class ConsentSwitchComponent {
   constructor(private renderer: Renderer2) { }
 
   @Output() switchToggled: EventEmitter<boolean> = new EventEmitter();
+  
+  @Input() optInText: string;
+  @Input() optOutText: string;
 
   @ViewChild('optin', {static: false}) 
   private optin: ElementRef;

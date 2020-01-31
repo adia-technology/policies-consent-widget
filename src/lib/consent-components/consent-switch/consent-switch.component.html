@@ -1,6 +1,6 @@
 <div class="container">
     <div class="opt-toggle">
-        <span class="opt-out-toggled" #optout>NO</span>
+    <span class="opt-out-toggled" #optout>{{ optOutText }}</span>
         <div class="switch-container">
             <ui-switch
                 checked
@@ -9,6 +9,6 @@
                 size="small">
             </ui-switch>
         </div>
-        <span class="opt-in-toggled" #optin>YES</span>
+        <span class="opt-in-toggled" #optin>{{ optInText }}</span>
     </div>
 </div>
