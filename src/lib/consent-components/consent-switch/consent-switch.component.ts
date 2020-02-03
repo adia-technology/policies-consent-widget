@@ -10,6 +10,7 @@ export class ConsentSwitchComponent {
 
   @Output() switchToggled: EventEmitter<boolean> = new EventEmitter();
   
+  @Input() checked: boolean = true;
   @Input() optInText: string;
   @Input() optOutText: string;
 
