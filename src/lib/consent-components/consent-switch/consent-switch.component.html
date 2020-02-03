@@ -3,7 +3,7 @@
     <span class="opt-out-toggled" #optout>{{ optOutText }}</span>
         <div class="switch-container">
             <ui-switch
-                checked
+                [checked]="checked"
                 (change)="setColors($event)"
                 defaultBgColor="#fff"
                 size="small">
