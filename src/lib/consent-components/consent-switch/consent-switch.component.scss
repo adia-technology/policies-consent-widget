@@ -8,29 +8,31 @@ $switch-bg-color: var(--switch-bg-color);
 
 // Toggle overrides
 
-::ng-deep .switch.switch-small.checked {
-    background: $switch-bg-color;
-    small {
-        background-color: $primary-color;
-        box-shadow: none;
-        width: 20px;
-        height: 20px;
-        top: -1px;
-        right:-1px;
+.consent-switch-container {
+    .switch.switch-small.checked {
+        background: $switch-bg-color;
+        small {
+            background-color: $primary-color;
+            box-shadow: none;
+            width: 20px;
+            height: 20px;
+            top: -1px;
+            right:-1px;
+        }
     }
-}
-
-::ng-deep .switch {
-            small {
+    
+    .switch {
+        small {
             background-color: $quaternary-color;
             box-shadow: -0.5px 0 2px 1px $quaternary-color;
             top:-1px;
         }
-}
-
-::ng-deep .switch.switch-small {
-    min-width: 40px;
-    height: 18px;
+    }
+    
+    .switch.switch-small {
+        min-width: 40px;
+        height: 18px;
+    }
 }
 
 .opt-toggle {
