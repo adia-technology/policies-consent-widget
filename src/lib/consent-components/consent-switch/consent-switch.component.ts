@@ -1,16 +1,22 @@
-import { Component, Renderer2, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Renderer2, ViewChild, ElementRef, Output, EventEmitter, Input, ViewEncapsulation, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-consent-switch',
   templateUrl: './consent-switch.component.html',
-  styleUrls: ['./consent-switch.component.scss']
+  styleUrls: ['./consent-switch.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ConsentSwitchComponent {
-  constructor(private renderer: Renderer2) { }
+export class ConsentSwitchComponent implements AfterViewInit {
+  _checked: boolean;
+  constructor(private renderer: Renderer2) {}
 
   @Output() switchToggled: EventEmitter<boolean> = new EventEmitter();
   
-  @Input() checked: boolean = true;
+  @Input()
+  set checked(value: boolean) {
+    this._checked = value;
+  }
+  
   @Input() optInText: string;
   @Input() optOutText: string;
 
@@ -19,6 +25,10 @@ export class ConsentSwitchComponent {
 
   @ViewChild('optout', {static: false}) 
   private optout: ElementRef;
+
+  ngAfterViewInit() {
+    this.setColors(this._checked)
+  }
 
   setColors(toggled: boolean) {
     this.renderer.setAttribute(this.optin.nativeElement, 'class', toggled ? 'opt-in-toggled' : 'opt-in-default')
