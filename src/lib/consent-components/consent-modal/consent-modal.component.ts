@@ -13,6 +13,7 @@ export class ConsentModalComponent implements OnInit {
 
   showMarkdown = false;
 
+  @Input() identifier: string;
   @Input() showBackArrow: boolean;
   @Input() confirmedConsent: EventEmitter<any> = new EventEmitter();
   @Output() onClose: EventEmitter<any> = new EventEmitter();
@@ -24,8 +25,8 @@ export class ConsentModalComponent implements OnInit {
     })
   }
 
-  open() {
-    this.ngxSmartModalService.getModal('consentModal').open();
+  open(identifier: string) {
+    this.ngxSmartModalService.getModal(identifier).open();
   }
 
   close() {
