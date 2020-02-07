@@ -25,13 +25,13 @@ export class ConsentModalComponent implements OnInit {
     })
   }
 
-  open(identifier: string) {
-    this.ngxSmartModalService.getModal(identifier).open();
+  open() {
+    this.ngxSmartModalService.getModal(this.identifier).open();
   }
 
   close() {
     this.onClose.emit()
-    this.ngxSmartModalService.closeAll();
+    this.ngxSmartModalService.close(this.identifier);
   }
 
   navigateBack() {
