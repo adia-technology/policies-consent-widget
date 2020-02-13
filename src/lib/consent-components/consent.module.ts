@@ -8,6 +8,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ConsentButtonComponent } from './consent-button/consent-button.component';
 import { ConsentSwitchComponent } from './consent-switch/consent-switch.component';
 import { ConsentModalComponent } from './consent-modal/consent-modal.component';
+import { ConsentModalNavigationComponent } from './consent-modal-navigation/consent-modal-navigation.component';
 import { MarkdownToHtmlComponent } from './markdown-to-html/markdown-to-html.component';
 import { ThemeDirective } from './theme/theme.directive';
 
@@ -16,6 +17,7 @@ import { ThemeDirective } from './theme/theme.directive';
     ConsentButtonComponent,
     ConsentSwitchComponent,
     ConsentModalComponent,
+    ConsentModalNavigationComponent,
     MarkdownToHtmlComponent,
     ThemeDirective
   ],
@@ -29,6 +31,7 @@ import { ThemeDirective } from './theme/theme.directive';
     ConsentButtonComponent,
     ConsentSwitchComponent,
     ConsentModalComponent,
+    ConsentModalNavigationComponent,
     MarkdownToHtmlComponent,
     ThemeDirective
   ]

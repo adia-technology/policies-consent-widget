@@ -42,6 +42,7 @@ $default-font-family: Roboto;
     }
     
     ol {
+        list-style-type: none;
         padding: 0;
         counter-reset: my-awesome-counter;
         + hr {
