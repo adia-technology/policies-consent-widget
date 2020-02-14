@@ -1,13 +1,3 @@
-<div class="modal-container">
-    <ngx-smart-modal
-        class="modal-container"
-        [identifier]="identifier" 
-        [dismissable]="false"
-        [escapable]="false">
-        <div class="navigation-icons">
-            <i class="material-icons" [ngStyle]="{'visibility': showBackArrow ? 'visible' : 'hidden'}" (click)="navigateBack()">keyboard_backspace</i>
-            <i class="material-icons" (click)="close()">close</i>
-        </div>
-        <ng-content></ng-content>
-    </ngx-smart-modal>
-</div>
+<ng-template #template>
+    <ng-content></ng-content>
+</ng-template>

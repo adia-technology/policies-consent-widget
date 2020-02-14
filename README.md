@@ -35,7 +35,10 @@ Add third party scss imports to your global styling scss.
 
 Basic example
 ```
-<app-consent-modal [theme]="theme" (onClose)="save()">
+<app-consent-modal [theme]="theme" [identifier]="your-modal-identifier">
+  <app-consent-modal-navigation   
+  [theme]="theme"
+  (onClose)="methodHandlingCloseAction()"></app-consent-modal-navigation>
   Put a content here e.g. html.
   <app-consent-switch [theme]="theme" (switchToggled)="setSwitch($event)"></app-consent-switch>
   <app-consent-button [theme]="theme" [innerText]="'Confirm'" (onClick)="confirmConsent()"></app-consent-button>
@@ -48,11 +51,15 @@ You have to provide markdown string to ```app-markdown-to-html``` component via 
 Toggle modal view when navigating back from rendered markdown by listening ```(onNavigateBack)``` event.
 
 ```
-<app-consent-modal [theme]="theme"
-[showBackArrow]="showMarkdown" 
-(onNavigateBack)="toggleMarkdown($event)"
-(onClose)="save()"
+<app-consent-modal 
+[theme]="theme"
+[identifier]="your-modal-identifier"
 [confirmedConsent]="confirmedConsent">
+  <app-consent-modal-navigation   
+  [theme]="theme"
+  [showArrow]="showMarkdown" 
+  (onClose)="saveToCookie()" 
+  (onNavigateBack)="toggleMarkdown($event)"></app-consent-modal-navigation>
   <div *ngIf="!showMarkdown; else markdown">
     <h1>{{ primaryHeader }}</h1>
     <h2>{{ secondaryHeader }}</h2>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
@@ -8,16 +8,17 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
   encapsulation: ViewEncapsulation.None
 })
 export class ConsentModalComponent implements OnInit {
+  
   constructor(
-    private ngxSmartModalService: NgxSmartModalService) { }
+    public ngxSmartModalService: NgxSmartModalService) { }
 
-  showMarkdown = false;
-
+  @Input() escapable: boolean = false;
+  @Input() dismissable: boolean = false;
   @Input() identifier: string;
-  @Input() showBackArrow: boolean;
   @Input() confirmedConsent: EventEmitter<any> = new EventEmitter();
-  @Output() onClose: EventEmitter<any> = new EventEmitter();
-  @Output() onNavigateBack: EventEmitter<any> = new EventEmitter();
+
+  @ViewChild(TemplateRef, {static: false})
+  public tmp: TemplateRef<any>;
 
   ngOnInit() {
     this.confirmedConsent.subscribe(() => {
@@ -26,16 +27,11 @@ export class ConsentModalComponent implements OnInit {
   }
 
   open() {
-    this.ngxSmartModalService.getModal(this.identifier).open();
+    this.ngxSmartModalService.create(this.identifier, this.tmp, { dismissable: this.dismissable, escapable: this.escapable }).open();
   }
 
   close() {
-    this.onClose.emit()
     this.ngxSmartModalService.close(this.identifier);
-  }
-
-  navigateBack() {
-    this.showBackArrow = false;
-    this.onNavigateBack.emit(false)
+    this.ngxSmartModalService.removeModal(this.identifier);
   }
 }
