@@ -1,16 +1,15 @@
-@import '../../../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss';
+@import "../../../../../node_modules/ngx-smart-modal/ngx-smart-modal.scss";
 
-$primary-color:var(--primary-color);
+$primary-color: var(--primary-color);
 
 .navigation-icons {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    i {
-        color: $primary-color;
-        &:hover {
-            cursor: pointer;
-        }
+  i {
+    color: $primary-color;
+    &:hover {
+      cursor: pointer;
     }
+  }
 }
-

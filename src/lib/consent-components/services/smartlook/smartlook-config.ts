@@ -1,3 +1,3 @@
 export interface SmartlookConfig {
-    cookieName: string;
+  cookieName: string;
 }

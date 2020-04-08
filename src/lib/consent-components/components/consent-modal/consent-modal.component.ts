@@ -1,33 +1,46 @@
-import { Component, Input, Output, EventEmitter, OnInit, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
-import { NgxSmartModalService } from 'ngx-smart-modal';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation,
+} from "@angular/core";
+import { NgxSmartModalService } from "ngx-smart-modal";
 
 @Component({
-  selector: 'app-consent-modal',
-  templateUrl: './consent-modal.component.html',
-  styleUrls: ['./consent-modal.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: "app-consent-modal",
+  templateUrl: "./consent-modal.component.html",
+  styleUrls: ["./consent-modal.component.scss"],
+  // tslint:disable-next-line: use-component-view-encapsulation
+  encapsulation: ViewEncapsulation.None,
 })
 export class ConsentModalComponent implements OnInit {
-  
-  constructor(
-    public ngxSmartModalService: NgxSmartModalService) { }
+  constructor(public ngxSmartModalService: NgxSmartModalService) {}
 
-  @Input() escapable: boolean = false;
-  @Input() dismissable: boolean = false;
+  @Input() escapable = false;
+  @Input() dismissable = false;
   @Input() identifier: string;
   @Input() confirmedConsent: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(TemplateRef, {static: false})
+  @ViewChild(TemplateRef, { static: false })
   public tmp: TemplateRef<any>;
 
   ngOnInit() {
     this.confirmedConsent.subscribe(() => {
-      this.close()
-    })
+      this.close();
+    });
   }
 
   open() {
-    this.ngxSmartModalService.create(this.identifier, this.tmp, { dismissable: this.dismissable, escapable: this.escapable }).open();
+    this.ngxSmartModalService
+      .create(this.identifier, this.tmp, {
+        dismissable: this.dismissable,
+        escapable: this.escapable,
+      })
+      .open();
   }
 
   close() {
