@@ -31,10 +31,10 @@ export class ConsentSwitchComponent implements AfterViewInit {
   @Input() optInText: string;
   @Input() optOutText: string;
 
-  @ViewChild("optin", { static: false })
+  @ViewChild("optin")
   private optin: ElementRef;
 
-  @ViewChild("optout", { static: false })
+  @ViewChild("optout")
   private optout: ElementRef;
 
   ngAfterViewInit() {

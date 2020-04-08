@@ -25,7 +25,7 @@ export class ConsentModalComponent implements OnInit {
   @Input() identifier: string;
   @Input() confirmedConsent: EventEmitter<any> = new EventEmitter();
 
-  @ViewChild(TemplateRef, { static: false })
+  @ViewChild(TemplateRef)
   public tmp: TemplateRef<any>;
 
   ngOnInit() {
