@@ -15,9 +15,7 @@ export class MarkdownService {
     PrivacyPolicy: "platform-privacy-policy.md",
   };
 
-  constructor(
-    @Inject(ConfigToken) private config: MarkdownConfig
-  ) {
+  constructor(@Inject(ConfigToken) private config: MarkdownConfig) {
     this.markdownBaseUrl = config.markdownBaseUrl;
     this.countrySuffix = config.countrySuffix;
     this.markdownNames = config.markdownNames;
