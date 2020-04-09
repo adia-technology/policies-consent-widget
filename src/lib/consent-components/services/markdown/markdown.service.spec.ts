@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 
-import { ConsentModuleConfigService } from "../consent-module-config.service";
+import { ConfigToken } from "../config-token";
 import { MarkdownService } from "./markdown.service";
 
 describe("MarkdownService", () => {
@@ -8,7 +8,7 @@ describe("MarkdownService", () => {
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: ConsentModuleConfigService,
+          provide: ConfigToken,
           useValue: {
             cookieName: "",
             countrySuffix: "",

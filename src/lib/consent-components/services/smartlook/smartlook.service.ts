@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@angular/core";
 import { CookieService } from "ngx-cookie-service";
-import { ConsentModuleConfigService } from "../consent-module-config.service";
+import { ConfigToken } from "../config-token";
 import { MarkdownType } from "../markdown/markdown-type.enum";
 import { MarkdownService } from "../markdown/markdown.service";
 import { SmartlookConfig } from "./smartlook-config";
@@ -12,7 +12,7 @@ export class SmartlookService {
   private cookieName: string;
 
   constructor(
-    @Inject(ConsentModuleConfigService) private config: SmartlookConfig,
+    @Inject(ConfigToken) private config: SmartlookConfig,
     private cookieService: CookieService,
     private markdownService: MarkdownService
   ) {

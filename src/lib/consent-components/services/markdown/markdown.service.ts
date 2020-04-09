@@ -1,5 +1,5 @@
 import { Inject, Injectable } from "@angular/core";
-import { ConsentModuleConfigService } from "../consent-module-config.service";
+import { ConfigToken } from "../config-token";
 import { MarkdownConfig } from "./markdown-config";
 import { MarkdownType } from "./markdown-type.enum";
 
@@ -16,7 +16,7 @@ export class MarkdownService {
   };
 
   constructor(
-    @Inject(ConsentModuleConfigService) private config: MarkdownConfig
+    @Inject(ConfigToken) private config: MarkdownConfig
   ) {
     this.markdownBaseUrl = config.markdownBaseUrl;
     this.countrySuffix = config.countrySuffix;

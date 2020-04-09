@@ -11,7 +11,7 @@ import { ConsentModalNavigationComponent } from "./components/consent-modal-navi
 import { ConsentModalComponent } from "./components/consent-modal/consent-modal.component";
 import { ConsentSwitchComponent } from "./components/consent-switch/consent-switch.component";
 import { MarkdownToHtmlComponent } from "./components/markdown-to-html/markdown-to-html.component";
-import { ConsentModuleConfigService } from "./services/consent-module-config.service";
+import { ConfigToken } from "./services/config-token";
 import { MarkdownService } from "./services/markdown/markdown.service";
 import { SmartlookService } from "./services/smartlook/smartlook.service";
 import { ThemeDirective } from "./theme/theme.directive";
@@ -47,12 +47,12 @@ export class ConsentModule {
       providers: [
         MarkdownService,
         {
-          provide: ConsentModuleConfigService,
+          provide: ConfigToken,
           useValue: config,
         },
         SmartlookService,
         {
-          provide: ConsentModuleConfigService,
+          provide: ConfigToken,
           useValue: config,
         },
       ],

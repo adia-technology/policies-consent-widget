@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 
-import { ConsentModuleConfigService } from "../consent-module-config.service";
+import { ConfigToken } from "../config-token";
 import { SmartlookService } from "./smartlook.service";
 
 describe("SmartlookService", () => {
@@ -8,7 +8,7 @@ describe("SmartlookService", () => {
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: ConsentModuleConfigService,
+          provide: ConfigToken,
           useValue: {
             cookieName: "",
             countrySuffix: "",
