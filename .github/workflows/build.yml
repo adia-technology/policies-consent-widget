@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: ng lint
+      - run: npm run lint
       - run: npm run-script prettier-check
       - run: npm run build
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
