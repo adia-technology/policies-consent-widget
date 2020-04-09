@@ -1,21 +1,26 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
   - "10"
 
-dist: trusty
-sudo: false
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
-    - node_modules
-
-addons:
-  chrome: stable
+     - ./node_modules
 
 install:
-    - npm install
+  - npm install
 
 script:
   - ng lint && npm run-script prettier-check
   - npm run build
+  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
   
