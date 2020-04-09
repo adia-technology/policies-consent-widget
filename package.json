@@ -1,8 +1,8 @@
 {
   "name": "@adia-technology/policies-consent-widget",
   "version": "1.1.2",
-	"description": "Angular module to manage terms, policies and Smartlook integration.",
-	"main": "dist/policies-consent-widget/public-api.d.ts",
+  "description": "Angular module to manage terms, policies and Smartlook integration.",
+  "main": "dist/policies-consent-widget/public-api.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,26 +13,26 @@
     "prettier-check": "prettier --check src/**/*.{ts,scss,html}",
     "prettier": "prettier --write src/**/*.{ts,scss,html}"
   },
-	"keywords": [
+  "keywords": [
     "Smartlook",
     "terms",
     "policy",
     "markdown",
     "widget"
-	],
-	"author": "Adia Technology",
+  ],
+  "author": "Adia Technology",
   "license": "MIT",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/adia-technology/policies-consent-widget.git"
-	},
+    "type": "git",
+    "url": "https://github.com/adia-technology/policies-consent-widget.git"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15",
-    "ngx-cookie-service": "^3.0.4"
+    "ngx-cookie-service": "^2.4.0"
   },
   "dependencies": {
-    "ngx-cookie-service": "^3.0.4",
+    "ngx-cookie-service": "^2.4.0",
     "ngx-markdown": "^8.2.1",
     "ngx-smart-modal": "^7.3.0",
     "ngx-ui-switch": "^8.3.0"
@@ -74,7 +74,7 @@
     "typescript": "~3.2.4",
     "zone.js": "~0.9.1"
   },
-	"files": [
-		"**/*"
-	]
+  "files": [
+    "**/*"
+  ]
 }
