@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+
+      - name: Build & Publish package
+        run: |
+          mkdir dist
+          npm publish
       - run: npm ci
       - run: npm run build
       - run: npm publish --access public
