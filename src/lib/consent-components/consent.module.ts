@@ -46,10 +46,6 @@ export class ConsentModule {
       ngModule: ConsentModule,
       providers: [
         MarkdownService,
-        {
-          provide: ConfigToken,
-          useValue: config,
-        },
         SmartlookService,
         {
           provide: ConfigToken,
