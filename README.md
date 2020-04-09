@@ -1,7 +1,7 @@
 # PoliciesConsentWidget
 
 Set of reusable components to compose customizable policy consent Angular modal.
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
 
 ## Getting started
 
@@ -47,7 +47,7 @@ Basic example
 
 Example with markdown rendering within modal. 
 This was accomplished by utilizing ```*ngIf=...; else ...``` and ```<ng-template #...>```, thus the reason to supply below flags and events.
-You have to provide markdown string to ```app-markdown-to-html``` component via ```[markdownContent]``` binding. Provide flag for showing and hidding navigation back arrow, which is hidden by default. Inform ```app-consent-modal``` via ```[confirmedConsent]``` that consent is confirmed and modal can be closed.
+You have to provide markdown string to ```app-markdown-to-html``` component via ```[markdownContent]``` binding. Provide flag for showing and hiding navigation back arrow, which is hidden by default. Inform ```app-consent-modal``` via ```[confirmedConsent]``` that consent is confirmed and modal can be closed.
 Toggle modal view when navigating back from rendered markdown by listening ```(onNavigateBack)``` event.
 
 ```
@@ -75,6 +75,93 @@ Toggle modal view when navigating back from rendered markdown by listening ```(o
   </ng-template>
 </app-consent-modal>
 ```
+
+## Services
+
+You need to call forRoot method on import in app.module like this:
+```
+import { ConsentModule, ConsentModuleConfig } from '@adia-technology/policies-consent-widget';
+
+PoliciesConsentConfig: ConsentModuleConfig = {
+  markdownBaseUrl: 'https://yur.domain.com/documents/',
+  cookieName: 'smartlook-consent',
+  countrySuffix: '-EN/',
+  markdownNames: {
+    SmartlookConsent: 'smartlook-info.md',
+    TermsOfUse: 'platform-terms-of-use.md',
+    PrivacyPolicy: 'platform-privacy-policy.md'
+  }
+};
+
+@NgModule({
+    imports: [
+        ConsentModule.forRoot(PoliciesConsentConfig)
+    ],
+    ...
+```
+
+You need to have a specific hierarchy of folders in your documents folder like this:
+
+- Documents
+--en-EN
+---smartlook-info.md
+---platform-terms-of-use.md
+---platform-privacy-policy.md
+--de-EN
+---smartlook-info.md
+---platform-terms-of-use.md
+---platform-privacy-policy.md
+...
+--[lang]-[countrySuffix]
+---your-policy.md
+---your-terms.md
+---your-smartlook-info.md
+
+* MarkdownService
+To download markdown you need to use getMarkdown method like this:
+
+```
+ private getMarkdown(type: MarkdownType) {
+    this.markdownService.getMarkdown(type,
+      lang,
+      (result) => {
+        this.markdown = result;
+        this.consentPopup.open();
+      },
+      (error) => {console.log(error)});
+  }
+```
+type is a MarkdownType enum
+lang is a string 2 letter language shortcut like "en"
+
+* Smartlook service
+This service use MarkdownService and have similar method getMarkdown to get smartlook info but it returns promise.
+```
+ private getMarkdown() {
+    this.smartlookService.getMarkdown(lang)
+    .then(result => {
+        this.markdown = result;
+        this.consent.open();
+      });
+  }
+```
+
+It also provide a methods for cookie management. Here are some use cases:
+```
+  saveConsent() {
+    window.location.reload();
+    window.onunload = () => {
+      this.smartlookService.save(this.consentGiven);
+    };
+  }
+
+  if (this.smartlookService.isConsentSet()) {
+      this.consentGiven = this.smartlookService.isEnabled();
+    }
+```
+.isConsentSet() - check if cookie is created with true or false value
+.isEnabled() - checks if value is true
+.save(boolean) - saves user choice.
 
 ## Built With
 
