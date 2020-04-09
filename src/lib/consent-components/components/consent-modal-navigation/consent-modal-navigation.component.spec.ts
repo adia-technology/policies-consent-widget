@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ConsentModalNavigationComponent } from './consent-modal-navigation.component';
+import { ConsentModalNavigationComponent } from "./consent-modal-navigation.component";
 
-describe('ConsentModalNavigationComponent', () => {
+describe("ConsentModalNavigationComponent", () => {
   let component: ConsentModalNavigationComponent;
   let fixture: ComponentFixture<ConsentModalNavigationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConsentModalNavigationComponent ]
-    })
-    .compileComponents();
+      declarations: [ConsentModalNavigationComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ConsentModalNavigationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

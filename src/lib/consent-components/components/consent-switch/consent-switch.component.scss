@@ -1,0 +1,62 @@
+@import "../../../../../node_modules/ngx-ui-switch/ui-switch.component.scss";
+
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
+$quaternary-color: var(--quaternary-color);
+$primary-color: var(--primary-color);
+$switch-bg-color: var(--switch-bg-color);
+
+// Toggle overrides
+
+.consent-switch-container {
+  .switch.switch-small.checked {
+    background: $switch-bg-color;
+    small {
+      background-color: $primary-color;
+      box-shadow: none;
+      width: 20px;
+      height: 20px;
+      top: -1px;
+      right: -1px;
+    }
+  }
+
+  .switch {
+    small {
+      background-color: $quaternary-color;
+      box-shadow: -0.5px 0 2px 1px $quaternary-color;
+      top: -1px;
+    }
+  }
+
+  .switch.switch-small {
+    min-width: 40px;
+    height: 18px;
+  }
+}
+
+.opt-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  font-weight: 700;
+  span {
+    margin: 0 0.5rem;
+  }
+}
+
+.opt-in-default {
+  color: $tertiary-color;
+}
+
+.opt-out-default {
+  color: $secondary-color;
+}
+
+.opt-in-toggled {
+  color: $primary-color;
+}
+
+.opt-out-toggled {
+  color: $tertiary-color;
+}

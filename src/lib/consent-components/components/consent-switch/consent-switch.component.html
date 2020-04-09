@@ -1,0 +1,13 @@
+<div class="opt-toggle">
+  <span class="opt-out-toggled" #optout>{{ optOutText }}</span>
+  <div class="consent-switch-container">
+    <ui-switch
+      [checked]="_checked"
+      (change)="setColors($event)"
+      defaultBgColor="#fff"
+      size="small"
+    >
+    </ui-switch>
+  </div>
+  <span class="opt-in-toggled" #optin>{{ optInText }}</span>
+</div>

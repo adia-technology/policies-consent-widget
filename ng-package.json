@@ -7,6 +7,7 @@
   "whitelistedNonPeerDependencies": [
     "ngx-markdown",
     "ngx-ui-switch",
-    "ngx-smart-modal"
+    "ngx-smart-modal",
+    "ngx-cookie-service"
   ]
 }
