@@ -1,9 +1,8 @@
 {
   "name": "@adia-technology/policies-consent-widget",
-  "version": "1.1.1",
+  "version": "1.1.2",
 	"description": "Angular module to manage terms, policies and Smartlook integration.",
-	"main": "dist/public-api.d.ts",
-	"module": "dist/adia-technology-policies-consent-widget.d.ts",
+	"main": "dist/policies-consent-widget/public-api.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -76,6 +75,6 @@
     "zone.js": "~0.9.1"
   },
 	"files": [
-		"dist/**/*"
+		"**/*"
 	]
 }
