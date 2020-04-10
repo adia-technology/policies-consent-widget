@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { ConsentModuleConfig } from "./consent.module.config";
 
+import { CookieService } from "ngx-cookie-service";
 import { MarkdownModule } from "ngx-markdown";
 import { NgxSmartModalModule } from "ngx-smart-modal";
 import { UiSwitchModule } from "ngx-ui-switch";
@@ -47,6 +48,7 @@ export class ConsentModule {
       providers: [
         MarkdownService,
         SmartlookService,
+        CookieService,
         {
           provide: ConfigToken,
           useValue: config,
