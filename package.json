@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "ngx-cookie-service": "^2.4.0",
-    "ngx-markdown": "^8.2.1",
+    "ngx-markdown": "^11.2.0",
     "ngx-smart-modal": "^7.4.1",
     "ngx-ui-switch": "^8.3.0"
   },
