@@ -89,7 +89,8 @@ PoliciesConsentConfig: ConsentModuleConfig = {
   markdownNames: {
     SmartlookConsent: 'smartlook-info.md',
     TermsOfUse: 'platform-terms-of-use.md',
-    PrivacyPolicy: 'platform-privacy-policy.md'
+    PrivacyPolicy: 'platform-privacy-policy.md',
+    GeneralStaffingTerms: "platform-general-staffing-terms.md"
   }
 };
 
