@@ -108,15 +108,18 @@ You need to have a specific hierarchy of folders in your documents folder like t
 ---smartlook-info.md
 ---platform-terms-of-use.md
 ---platform-privacy-policy.md
+---platform-general-staffing-terms.md
 --de-EN
 ---smartlook-info.md
 ---platform-terms-of-use.md
 ---platform-privacy-policy.md
+---platform-general-staffing-terms.md
 ...
 --[lang]-[countrySuffix]
 ---your-policy.md
 ---your-terms.md
 ---your-smartlook-info.md
+---your-staffing-terms.md
 
 * MarkdownService
 To download markdown you need to use getMarkdown method like this:
