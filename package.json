@@ -1,6 +1,6 @@
 {
   "name": "@adia-technology/policies-consent-widget",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Angular module to manage terms, policies and Smartlook integration.",
   "main": "bundles/adia-technology-policies-consent-widget.umd.js",
   "scripts": {

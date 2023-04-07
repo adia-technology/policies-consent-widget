@@ -13,6 +13,7 @@ export class MarkdownService {
     SmartlookConsent: "smartlook-info.md",
     TermsOfUse: "platform-terms-of-use.md",
     PrivacyPolicy: "platform-privacy-policy.md",
+    GeneralStaffingTerms: "platform-general-staffing-terms.md",
   };
 
   constructor(@Inject(ConfigToken) private config: MarkdownConfig) {
