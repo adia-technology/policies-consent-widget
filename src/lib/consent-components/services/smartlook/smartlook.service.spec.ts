@@ -17,7 +17,7 @@ describe("SmartlookService", () => {
               SmartlookConsent: "x",
               TermsOfUse: "y",
               PrivacyPolicy: "z",
-              GeneralStaffingTerms: "w"
+              GeneralStaffingTerms: "w",
             },
           },
         },

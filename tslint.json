@@ -3,17 +3,7 @@
   "rules": {
     "interface-name": false,
     "no-output-on-prefix": false,
-    "directive-selector": [
-      true,
-      "attribute",
-      "",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ]
+    "directive-selector": [true, "attribute", "", "camelCase"],
+    "component-selector": [true, "element", "app", "kebab-case"]
   }
 }
